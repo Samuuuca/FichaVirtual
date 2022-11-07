@@ -8,7 +8,7 @@ function Login(){
     if(User.value == 'Alice' && decodificador(Password.value) == 'Alice' ){ //Alice
         window.location.replace("pages/Ficha.html");
     }
-    else if(User.value == 'Mathues' && decodificador(Password.value) == 'Matheus' ){ // Mathues
+    else if(User.value == 'Adamastor' && decodificador(Password.value) == 'Adamastor' ){ // Mathues
         window.location.replace("pages/Ficha.html");
     }
     else if(User.value == 'Millena' && decodificador(Password.value) == 'Millena' ){ // Millena
