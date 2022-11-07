@@ -4,7 +4,11 @@ const Usuario = localStorage.getItem('Usuario');
 window.onload = (event) =>{
     
     console.log(Usuario)
-    Update()
+    
+    const timer = setTimeout(()=>{
+
+        //alert('Lembre-se de atualizar a ficha')
+    },7000)
     
 }
 
@@ -71,6 +75,7 @@ function UpdateDataBase() {
 function Form(){
     
     ficha.style.display = 'none'
+    $buttonStatusBar.style.display = 'none  '
     Formulario.style.display = 'block'
     body.style.background = '#000000 url(../img/Matrix-16.7s-1084px.png) repeat fixed center'
 
@@ -274,7 +279,17 @@ function Update(){
     Personagem.nome = PersonagemGlobal.nome
     Personagem.vida = PersonagemGlobal.vida
     Personagem.pe = PersonagemGlobal.pontosesforço
-    Personagem.sn = PersonagemGlobal.sanidade   
+    Personagem.sn = PersonagemGlobal.sanidade
+    
+    if(PersonagemGlobal.url == `""`)
+    {
+        alert('Imgagem não atualizada')
+    }
+    else{
+                
+        foto.style.backgroundImage = `url("${PersonagemGlobal.url}")`
+        divadd.style.display = 'none'
+    }
 
     return 'Atualizado'
 }

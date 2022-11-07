@@ -27,6 +27,15 @@
     .personagemFoto{
         margin-bottom: 20px;
     }
+    .form{
+        width: auto;
+        height: auto;
+    }
+    .addInfo{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
 }
 @keyframes ShowStatusBar {
     0%{

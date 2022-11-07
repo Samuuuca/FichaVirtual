@@ -24,12 +24,12 @@ $buttonStatusBar.addEventListener('click', () =>{
 
 })
 
-foto.addEventListener('click', () =>{
+function callChangeImage(){
     
     inputForm.style.display = 'flex'
-})
+}
 
-$buttonUpdateImg.addEventListener('click', () =>{
+function changeImage(){
 
         
     foto.style.backgroundImage = `url("${linkimg.value}")`
@@ -39,13 +39,13 @@ $buttonUpdateImg.addEventListener('click', () =>{
         alert('Imgagem não atualizada')
         inputForm.style.cssText = 'none'
     }
-    else
-    {
+    else{
+                
+        PersonagemGlobal.url = linkimg.value
         divadd.style.display = 'none'
         inputForm.style.display = 'none'
     }
-
-})
+}
 
 
 function codificador(frase) {
