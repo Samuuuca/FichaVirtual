@@ -1,0 +1,61 @@
+#buttonStatusBar{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+
+}
+
+@media screen and (max-width: 600px) {
+    .Principal{
+        flex-direction: column;
+        margin: 20px;
+    }
+    .Info{
+        flex-direction: column-reverse;
+    }
+    .personagemDef{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .personagemDef p {
+
+        width: auto;
+    }
+    .status{
+        position: absolute;
+        top: 40px;
+        display: none;
+    }
+    .personagemFoto{
+        margin-bottom: 20px;
+    }
+}
+@keyframes ShowStatusBar {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+
+        transform: translateX(0);
+    }
+    
+}
+@keyframes DeleteStatusBar{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+
+        transform: translateX(-200px);
+    }
+}
+@media screen and (max-width: 1300px) {
+    .Principal{
+        flex-direction: column-reverse;
+    }
+    .main{
+        width: 100%;
+        margin: 0;
+    }
+    .status{
+        width: auto;
+    }
+}

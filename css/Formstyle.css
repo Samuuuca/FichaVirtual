@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.form{
+    
+    display: none;
+    height: 79vh;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.384);
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px;
+    font-family: 'Nanum Gothic', sans-serif;
+    box-shadow: -10px 10px 50px  rgba(255, 255, 255, 0.205);
+}
+.addInfo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+.form p {
+    background-color: rgba(146, 17, 135, 0.89);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px 0 0;
+}
+.addInfo input{
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.726);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form button{
+
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.form button:hover{
+
+    background-color: black;
+    color: white;
+}

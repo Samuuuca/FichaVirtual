@@ -1,0 +1,197 @@
+@import url('http://fonts.cdnfonts.com/css/filson-pro');
+
+body{
+    color: white;
+    background: #03040e url(../img/Ordem_Paranormal_Logo.png) no-repeat fixed center;
+    margin: 0;
+    padding: 0;
+}
+.Principal{
+    display: flex;
+    font-family: 'Filson Pro', sans-serif;
+
+}
+.task{
+    background-color: aliceblue;
+
+}
+.main{
+    flex: 90%;
+    margin: 20px;
+    background-color: #5c16ac70;
+    border-radius: 10px;
+}
+.main h1{
+
+    text-align: center;
+}
+.maxlife{
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 32, 32, 0.37);
+}
+.minlife{
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+}
+.maxlife:nth-child(2){
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(58, 250, 0, 0.384);
+}
+.maxlife #peDano{
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(46, 255, 46);
+}
+.status{
+    width: 100%;
+    text-align: center;
+    flex: 10%;
+    background-color: #320086;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 20px 20px 0;
+}
+.status h1{
+    font-size: 15px;
+}
+
+.statusIn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+
+}
+.dados{
+    position: relative;
+    display: flex;
+    width: 200px;
+}
+.roll{
+    
+    width: 100px;
+    height: 100%;
+    position: relative;
+}
+.roll:hover{
+    transform: scale(1.2);
+}
+#rollNumber{
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    left: 41px;
+}
+#rollNumberd6{
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    left: 143px;
+}
+#imgDado{
+    
+    cursor: pointer;
+    border: none;
+    background-color: none;
+    
+}
+.animationRoll{
+    animation: rollDadoCss 3s;
+}
+@keyframes rollDadoCss {
+    0%{
+        transform: rotate(0deg) ;
+    }
+    100%{
+        transform: rotate(360deg);   
+    }
+}
+.personagemDef{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+.personagemDef p {
+    margin: 0 0 0 5px;
+    background-color: #00000059;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+}
+.Habilidades h1{
+    text-align: left;
+    font-size: 20px;
+    text-align: center;
+}
+
+.personagemFoto{
+
+    width: 150px;
+    height: 150px;
+    margin: 0 30px;
+    border-radius: 50%;
+    border: solid 5px black;
+    background-color: aliceblue;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: 150px 150px;
+    color: #000000;
+    position: relative;
+}
+.Info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50%;
+}
+.inputForm{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 20px;
+    width: 500px;
+    height: 200px;
+    background-color: #000000;
+    border-radius: 10px;
+    color: white;
+}
+.addbutton{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.inputForm h1{
+
+    font-size: 50px;
+}
+#ImgLink{
+    padding: 10px;
+    width: 300px;
+    height: 10px;
+    margin: 5px;
+}
+.inputForm button{
+
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
