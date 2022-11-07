@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Formstyle.css">
+    <link rel="stylesheet" href="css/MobileVersion.css">
+	
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+	
+
+    <title>Ficha Virtual RPG</title>
+</head>
+<body>
+    <div class="task">
+        <button type="submit" onclick="Form()"> Editar informações</button>
+        <a href="login.html"> Entrar </a>
+        <button type="submit" onclick="Update()">Atualizar </button>
+    </div>
+    <div class="form">
+        <h1>Insira todas as informações</h1>
+
+        <div class="addInfo">
+            <p>Nome</p><input type="text" id="formnome">
+            <p>Jogador</p><input type="text" id="formjogador">
+            <p>Origem</p><input type="text" id="formorigem">
+            <p>Classe</p><input type="text" id="formclasse">
+            <p>Patente</p><input type="text" id="formpatente">
+            <p>Elemento</p><input type="text" id="formelemento">
+            <p>Nex</p><input type="number" id="formnex">
+            <p>XP</p><input type="number" id="formxp">
+            <p>PM</p><input type="number" id="formpm">
+            <p>Agilidade</p><input type="number" id="formagilidade">
+            <p>Vigor</p><input type="number" id="formvigor">
+            <p>Intelecto</p><input type="number" id="formintelecto">
+            <p>Presença</p><input type="number" id="formpresença">
+            <p>Força</p><input type="number" id="formforça">
+            <p>Vida</p><input type="number" id="formvida">
+            <p>Pontos de esforço</p><input type="number" id="formpontosesforço">
+            <p>Sanindade</p> <input type="number" id="formsanidade">
+        </div>
+
+        <button type="submit" onclick="getInformations()">Enviar Dados</button>
+    </div>
+    <main>
+        <button id="buttonStatusBar"><img src="img/icons/icons8-grip-lines-32.png" alt=""></button>
+    <div class="Principal">
+        <div class="main">
+                <h1>Ficha RPG</h1>
+                <div class="Info">
+                        <div class="personagemDef" id="personagemDef">
+                            <p>Nome: <span class="Def1"></span></p>
+                            <p>Jogador: <span class="Def1"></span></p>
+                            <p>Origem: <span class="Def1"></span></p>
+                            <p>Classe: <span class="Def1"></span></p>
+                            <p>Patente: <span class="Def1"></span></p>
+                            <p>Elemento: <span class="Def1"></span></p>
+                            <p>Nex: <span class="Def1"></span></p>
+                            <p>XP: <span class="Def1"></span></p>
+                            <p>PM: <span class="Def1"></span></p>
+                        </div>
+                        <div class="personagemFoto">
+                            <div class="addbutton">
+                                <img src="img/icons/icons8-adicionar-câmera-60.png" alt="">
+                                <span>Adicionar foto</span>
+                            </div>
+                            
+                            <div class="inputForm">
+                                <h1>Add image Url</h1>
+                                <input type="url" id="ImgLink">
+                                <button type="submit" id="buttonUpdateImg">Enviar Foto</button>
+                            </div> 
+                        </div>
+                </div>
+                <div class="dados">
+                    <div class="roll">
+                        <p id="rollNumber"> 0</p>
+                        <img onclick="rollDado(1, 20, 'imgDado','rollNumber')" src="img/D20_icon.png" id="imgDado" width="100px" height="100px">
+                    </div>
+                    <div class="rolld6">
+                        <p id="rollNumberd6">0</p>                            
+                        <img onclick="rollDado(1, 10,'imgDadod10','rollNumberd6')" src="img/dado-10-lados.png" id="imgDadod10" width="100px" height="100px">
+                    </div>
+                    <div class="rolld10">
+                        <p id="rollNumberd10"></p>
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="Habilidades">
+                    <h1> Agilidade: <span class="def2"> 0 </span></h1>
+                    <h1> Vigor: <span class="def2">0</span></h1>
+                    <h1>Intelecto: <span class="def2">0</span></h1>
+                    <h1>Presença: <span class="def2">0</span></h1>
+                    <h1>Força: <span class="def2"> 0 </span></h1>
+                </div>
+        </div>
+        <div class="status">
+            <div class="vida">
+                <h1>Vida</h1>
+                <p id="vidaP">  </p>
+                <div class="maxlife">
+                    <div class="minlife" id="vidaDano"> </div>
+                </div>
+                <div class="statusIn">
+                    <button type="submit" onclick="add('vidaP', PersonagemStatusTemp)"> + </button>
+                    <button type="submit" onclick="remove('vidaP', PersonagemStatusTemp)"> - </button>
+                </div>
+            </div>
+            <div class="pe">
+                <h1>Pontos de esforço </h1>
+                <p id="peP">0</p>
+                <div class="maxlife">
+                    <div class="minlife" id="peDano"> </div>
+                </div>
+                <div class="statusIn">
+                    <button type="submit" onclick="addEsforço('peP', PersonagemStatusTemp)"> + </button>
+                    <button type="submit" onclick="removeEsforço('peP', PersonagemStatusTemp)"> - </button>
+                </div>
+            </div>
+            <div class="sn">
+                <h1>Sanidade</h1>
+                <p id="snP"> 0 </p>
+                <div class="maxlife" >
+                    <div class="minlife" id="snDano"> </div>
+                </div>
+                <div class="statusIn">
+                    <button type="submit" onclick="addSanidade('snP', PersonagemStatusTemp)"> + </button>
+                    <button type="submit" onclick="removeSanidade('snP', PersonagemStatusTemp)"> - </button>
+                </div>
+            </div>    
+        </div>
+    </div>
+    </main>
+    <script src="js/Login.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/status.js"></script>
+	<script src="js/dados.js"></script>
+    <script src="js/style.js"></script>
+	
+</body>
+</html>
