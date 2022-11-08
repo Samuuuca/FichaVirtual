@@ -4,11 +4,13 @@ const Usuario = localStorage.getItem('Usuario');
 window.onload = (event) =>{
     
     console.log(Usuario)
+    Update()
+
     
     const timer = setTimeout(()=>{
 
-        //alert('Lembre-se de atualizar a ficha')
-    },7000)
+        Update()
+    },2000)
     
 }
 
@@ -75,7 +77,7 @@ function UpdateDataBase() {
 function Form(){
     
     ficha.style.display = 'none'
-    $buttonStatusBar.style.display = 'none  '
+    $buttonStatusBar.style.display = 'none'
     Formulario.style.display = 'block'
     body.style.background = '#000000 url(../img/Matrix-16.7s-1084px.png) repeat fixed center'
 
@@ -188,6 +190,7 @@ function getInformations() {
     ficha.style.display = 'flex'
     Formulario.style.display = 'none'
     body.style.background = '#000000 url(../img/Ordem_Paranormal_Logo.png) no-repeat fixed center'
+    $buttonStatusBar.style.display = 'block'
 
     bd.collection('Personagens').doc(Usuario).get().then(function (doc){
         
@@ -281,7 +284,7 @@ function Update(){
     Personagem.pe = PersonagemGlobal.pontosesforço
     Personagem.sn = PersonagemGlobal.sanidade
     
-    if(PersonagemGlobal.url == `""`)
+    if(PersonagemGlobal.url == "")
     {
         alert('Imgagem não atualizada')
     }

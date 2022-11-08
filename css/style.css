@@ -13,6 +13,8 @@ body{
 }
 .task{
     background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
 
 }
 .main{
