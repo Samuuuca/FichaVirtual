@@ -14,15 +14,27 @@
     }
     .personagemDef{
         grid-template-columns: repeat(2, 1fr);
+        margin: 5px;
     }
     .personagemDef p {
 
         width: auto;
+        background-color: rgba(0, 0, 0, 0.692);
     }
     .status{
         position: absolute;
         top: 40px;
         display: none;
+    }
+    .statusOn{
+        display: block;
+        animation: ShowStatusBar 1s;
+        left: 0;
+
+    }
+    .statusOff{
+        display: none;
+        animation: DeleteStatusBar 1s;
     }
     .personagemFoto{
         margin-bottom: 20px;
@@ -36,8 +48,16 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
     }
+    .inputForm{
+        width: 350px;
+        height: auto;
+        padding: 5px;
+    }
+    .inputForm h1{
+        margin: 5px;
+    }
 }
-@keyframes ShowStatusBar {
+@keyframes ShowStatusBar{
     0%{
         transform: translateX(-200px);
     }
@@ -52,7 +72,6 @@
         transform: translateX(0);
     }
     100%{
-
         transform: translateX(-200px);
     }
 }

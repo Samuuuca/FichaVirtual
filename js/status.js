@@ -1,18 +1,7 @@
+const ficha = document.querySelector('.Principal')
+const Formulario = document.querySelector('.form')
+const body = document.querySelector('body')
 const Usuario = localStorage.getItem('Usuario');
-
-
-window.onload = (event) =>{
-    
-    console.log(Usuario)
-    Update()
-
-    
-    const timer = setTimeout(()=>{
-
-        Update()
-    },2000)
-    
-}
 
 class CriarPersonagem{
     constructor(nome, vida, pe, sn){
@@ -28,16 +17,9 @@ let Personagem = new CriarPersonagem()
 let todosFirst = [] //0 - 8
 let habilidades = [] // 9 - 13
 let ponto = []
-
-const ficha = document.querySelector('.Principal')
-const Formulario = document.querySelector('.form')
-const body = document.querySelector('body')
 let personagemDef = document.querySelectorAll('.Def1')
 let personagemDef2 = document.querySelectorAll('.def2')
-
-
 let PersonagemStatusTemp = []
-
 let PersonagemGlobal = {
     nome: '',
     jogador: '',
@@ -59,6 +41,19 @@ let PersonagemGlobal = {
     url:''
 }
 
+
+window.onload = (event) =>{
+    
+    console.log(Usuario)
+    Update()
+
+    const timer = setTimeout(()=>{
+
+        Update()
+    },2000)
+    
+}
+
 function UpdateDataBase() {
 
 
@@ -70,9 +65,6 @@ function UpdateDataBase() {
 
     
 }
-
-
-
 
 function Form(){
     
@@ -212,7 +204,6 @@ function getInformations() {
 
   
 }
-
     
 function ChangeHTML(personagemDef, personagemDef2) {
     for (let i = 0; i <= 8; i++) {
@@ -266,8 +257,11 @@ function Update(){
 
 
     todosFirst = [PersonagemGlobal.nome, PersonagemGlobal.jogador, PersonagemGlobal.origem, PersonagemGlobal.classe, 
-                PersonagemGlobal.patente, PersonagemGlobal.elemento,PersonagemGlobal.nex, PersonagemGlobal.xp, PersonagemGlobal.pm] //0 - 8
-    habilidades = [PersonagemGlobal.agilidade, PersonagemGlobal.vigor, PersonagemGlobal.intelecto, PersonagemGlobal.presença, PersonagemGlobal.força] // 9 - 13
+    PersonagemGlobal.patente, PersonagemGlobal.elemento,PersonagemGlobal.nex, PersonagemGlobal.xp, PersonagemGlobal.pm] //0 - 8
+    
+    habilidades = [PersonagemGlobal.agilidade, PersonagemGlobal.vigor, PersonagemGlobal.intelecto, 
+    PersonagemGlobal.presença, PersonagemGlobal.força] // 9 - 13
+    
     ponto = [PersonagemGlobal.vida, PersonagemGlobal.pontosesforço, PersonagemGlobal.sanidade] // 14 - 16
     
     
@@ -286,7 +280,7 @@ function Update(){
     
     if(PersonagemGlobal.url == "")
     {
-        alert('Imgagem não atualizada')
+        console.log('Imgagem não atualizada')
     }
     else{
                 

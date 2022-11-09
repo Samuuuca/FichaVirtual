@@ -20,7 +20,7 @@ body{
 .main{
     flex: 90%;
     margin: 20px;
-    background-color: #5c16ac70;
+    background-color: #5c16acaf;
     border-radius: 10px;
 }
 .main h1{
@@ -172,21 +172,33 @@ body{
     border-radius: 10px;
     color: white;
 }
+.Buttonclose{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
 .addbutton{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    background-color: white;
+    border-radius: 50%;
+    border: solid 5px black;
 }
 .addbutton > button{
 
     border: none;
     background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    margin: 2px;
 }
 .inputForm h1{
-
-    font-size: 50px;
+    font-size: 30px;
 }
 #ImgLink{
     padding: 10px;

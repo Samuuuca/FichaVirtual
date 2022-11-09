@@ -12,12 +12,15 @@ let testeButtonStatus = true
 $buttonStatusBar.addEventListener('click', () =>{
 
     if (testeButtonStatus) {
-        statusBar.style.cssText = 'display:block; animation: ShowStatusBar 2s;'
         testeButtonStatus = false
+        statusBar.classList.remove('statusOff')
+        statusBar.classList.add('statusOn')
     }
     else{
-        statusBar.style.cssText = 'animation: DeleteStatusBar 2s;'
         testeButtonStatus = true
+        statusBar.classList.remove('statusOn')
+        statusBar.classList.add('statusOff')
+
     }
 
     
@@ -28,6 +31,11 @@ function callChangeImage(){
     
     inputForm.style.display = 'flex'
 }
+document.querySelector('.Buttonclose').addEventListener('click', ()=> {
+    inputForm.style.cssText = 'none'
+}) 
+    
+
 
 function changeImage(){
 
@@ -42,11 +50,10 @@ function changeImage(){
     else{
                 
         PersonagemGlobal.url = linkimg.value
-        divadd.style.display = 'none'
+        divadd.children[1].innerHTML = ''
         inputForm.style.display = 'none'
     }
 }
-
 
 function codificador(frase) {
     
